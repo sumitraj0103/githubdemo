@@ -2,73 +2,79 @@ name: yamldemo_$(Date:yyyyMMdd)$(Rev:.r)
 parameters:
   - name: subscription
     displayName: "Enter Subscription Name"
+    default: "US-AZSUB-AME-TAX-DCMSHARED-PSGAPPS-NPD"
     type: string
     
   - name: RGName
     displayName: 'Enter ResourceGroup Name'
+    default: 'AZRG-USE2-TAX-DCM-Filer-DEV-001'
     type: string
 
   - name: GatewayName
     displayName: "Enter GatewayName"
+    default: 'azuse2dfilergwy01'
     type: string
 
   - name: FrontEndIPConfig
     displayName: "Enter FrontEndIPConfig"
+    default: 'gatewayIP'
     type: string
 
   - name: newPool
     displayName: "Enter newPool"
+    default: 'dev2-pool'
     type: string
 
   - name: redirectruleName80
     displayName: "Enter redirectruleName80"
+    default: 'rulesURLredirect-dev2-filer'
     type: string
 
   - name: ruleName443
     displayName: "Enter ruleName443"
+    default: 'rulesURL-filer-tardi'
     type: string
 
   - name: BackendHttpSettingName
     displayName: "Enter BackendHttpSettingName"
+    default: 'backendhttpSetting-dev2-tardi'
     type: string
 
   - name: PoolAddresses
     displayName: "Enter PoolAddresses"
+    default: '"10.212.250.42", "10.212.250.5"'
     type: string
 
   - name: listenerName443
     displayName: "Enter listenerName443"
+    default: 'listenerURL443-dev2'
     type: string
 
   - name: listenerName80Redirect
     displayName: "Enter listenerName80Redirect"
+    default: 'listenerURLRedirect-dev2'
     type: string
 
   - name: probeName
     displayName: "Enter probeName"
+    default: 'probe443-dev2'
     type: string
 
   - name: URLname
     displayName: "Enter URLname"
+    default: 'dev2-filer.deloitte.com'
     type: string
 
   - name: cerNAME
     displayName: "Enter cerNAME"
+    default: 'dev-filer.cer'
     type: string
 
   - name: pfxNAME
     displayName: "Enter pfxNAME"
-    default: "sds"
+    default: "dev-filer.pfx"
     type: string
 
-  - name: AccessType
-    displayName: "Enter Access Type"
-    type: string
-    default: Contributor
-    values:
-        - Reader
-        - Contributor
-        - Owner
 trigger: none
 pool:
  name: default
