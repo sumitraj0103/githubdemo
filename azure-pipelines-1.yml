@@ -58,7 +58,7 @@ parameters:
 
   - name: pfxNAME
     displayName: "Enter pfxNAME"
-    defaultValue: "sds"
+    default: "sds"
     type: string
 
   - name: AccessType
