@@ -1,0 +1,35 @@
+name: yamldemo_$(Date:yyyyMMdd)$(Rev:.r)
+parameters:
+  - name: SubscriptionName
+    displayName: "Enter Subscription Name"
+    type: string
+    
+  - name: WebAppName
+    displayName: 'Enter WebAppName'
+    type: string
+
+  - name: ResourceGroupName
+    displayName: "Enter ResourceGroupName"
+    type: string
+
+  - name: UserAccount
+    displayName: "Enter UserAccount for Access like:- test@xyx.com"
+    type: string
+
+  - name: AccessType
+    displayName: "Enter Access Type"
+    type: string
+    default: Contributor
+    values:
+        - Reader
+        - Contributor
+        - Owner
+trigger: none
+pool:
+ name: default
+steps:
+ - task: PowerShell@2
+   displayName: "Grant Access to Azure Resource"
+   inputs:
+    filePath: '$(System.DefaultWorkingDirectory)\AccessAutomation.ps1'
+    arguments: '-SubscriptionName "${{parameters.SubscriptionName}}" -WebAppName "${{parameters.WebAppName}}" -ResourceGroupName "${{parameters.ResourceGroupName}}" -UserAccount "${{parameters.UserAccount}}" -AccessType "${{parameters.AccessType}}"'
