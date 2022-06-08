@@ -1,19 +1,64 @@
 name: yamldemo_$(Date:yyyyMMdd)$(Rev:.r)
 parameters:
-  - name: SubscriptionName
+  - name: subscription
     displayName: "Enter Subscription Name"
     type: string
     
-  - name: WebAppName
-    displayName: 'Enter WebAppName'
+  - name: RGName
+    displayName: 'Enter ResourceGroup Name'
     type: string
 
-  - name: ResourceGroupName
-    displayName: "Enter ResourceGroupName"
+  - name: GatewayName
+    displayName: "Enter GatewayName"
     type: string
 
-  - name: UserAccount
-    displayName: "Enter UserAccount for Access like:- test@xyx.com"
+  - name: FrontEndIPConfig
+    displayName: "Enter FrontEndIPConfig"
+    type: string
+
+  - name: newPool
+    displayName: "Enter newPool"
+    type: string
+
+  - name: redirectruleName80
+    displayName: "Enter redirectruleName80"
+    type: string
+
+  - name: ruleName443
+    displayName: "Enter ruleName443"
+    type: string
+
+  - name: BackendHttpSettingName
+    displayName: "Enter BackendHttpSettingName"
+    type: string
+
+  - name: PoolAddresses
+    displayName: "Enter PoolAddresses"
+    type: string
+
+  - name: listenerName443
+    displayName: "Enter listenerName443"
+    type: string
+
+  - name: listenerName80Redirect
+    displayName: "Enter listenerName80Redirect"
+    type: string
+
+  - name: probeName
+    displayName: "Enter probeName"
+    type: string
+
+  - name: URLname
+    displayName: "Enter URLname"
+    type: string
+
+  - name: cerNAME
+    displayName: "Enter cerNAME"
+    type: string
+
+  - name: pfxNAME
+    displayName: "Enter pfxNAME"
+    defaultValue: "sds"
     type: string
 
   - name: AccessType
