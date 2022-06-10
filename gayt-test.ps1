@@ -17,7 +17,7 @@ param (
     [Parameter(Mandatory = $true)][string]$pfxNAME,
     [Parameter(Mandatory = $true)][string]$appid,
     [Parameter(Mandatory = $true)][string]$appsecret,
-    [Parameter(Mandatory = $true)][string]$tenandID
+    [Parameter(Mandatory = $true)][string]$tenantID
 )
 
 <#For Debug
@@ -44,7 +44,7 @@ $pfxNAME = "dev-filer.pfx" #to get this name, run: Get-AzApplicationGatewaySSLCe
 #Connect to Azure using SP
 
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $appid, $appsecret
-Connect-AzAccount -ServicePrincipal -TenantId $tenandID -Credential $Credential
+Connect-AzAccount -ServicePrincipal -TenantId $tenantID -Credential $Credential
 
 Set-AzContext -Subscription $subscription
 #Set the Subscription
