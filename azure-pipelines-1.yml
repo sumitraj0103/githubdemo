@@ -42,7 +42,7 @@ parameters:
 
   - name: PoolAddresses
     displayName: "Enter PoolAddresses"
-    default: '"10.212.250.42", "10.212.250.5"'
+    default: '10.212.250.42,10.212.250.5'
     type: string
 
   - name: listenerName443
