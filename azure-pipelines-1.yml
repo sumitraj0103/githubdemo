@@ -72,7 +72,7 @@ parameters:
 
   - name: pfxNAME
     displayName: "Enter pfxNAME"
-    default: "dev-filer.pfx"
+    default: 'dev-filer.pfx'
     type: string
 
 trigger: none
